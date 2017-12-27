@@ -28,6 +28,7 @@
     thermalserviced_tmpfs
     timezone_service
     tombstoned_java_trace_socket
+    havocfont_service
     substratum_service
     theme_data_file
     theme_prop))
