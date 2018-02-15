@@ -603,6 +603,7 @@
 (typeattributeset storage_stub_file_26_0 (storage_stub_file))
 (typeattributeset su_26_0 (su))
 (typeattributeset su_exec_26_0 (su_exec))
+(typeattributeset havocfont_service_26_0 (havocfont_service))
 (typeattributeset surfaceflinger_26_0 (surfaceflinger))
 (typeattributeset surfaceflinger_service_26_0 (surfaceflinger_service))
 (typeattributeset swap_block_device_26_0 (swap_block_device))
