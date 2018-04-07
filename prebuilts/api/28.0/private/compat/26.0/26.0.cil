@@ -438,6 +438,7 @@
 (typeattributeset pipefs_26_0 (pipefs))
 (typeattributeset platform_app_26_0 (platform_app))
 (typeattributeset pmsg_device_26_0 (pmsg_device))
+(typeattributeset pocket_service_26_0 (pocket_service))
 (typeattributeset port_26_0 (port))
 (typeattributeset port_device_26_0 (port_device))
 (typeattributeset postinstall_26_0 (postinstall))
