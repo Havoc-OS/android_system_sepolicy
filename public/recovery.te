@@ -138,7 +138,6 @@ recovery_only(`
  allow recovery rootfs:fifo_file create_file_perms;
  allow recovery selinuxfs:file w_file_perms;
  allow recovery system_data_file:dir r_dir_perms;
- allow recovery tee_listener_prop:property_service set;
  allow recovery tmpfs:fifo_file r_file_perms;
  allow recovery unencrypted_data_file:dir r_dir_perms;
  allow recovery vold_prop:property_service set;
