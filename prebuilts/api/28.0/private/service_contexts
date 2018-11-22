@@ -61,6 +61,7 @@ graphicsstats                             u:object_r:graphicsstats_service:s0
 gpu                                       u:object_r:gpu_service:s0
 hardware                                  u:object_r:hardware_service:s0
 hardware_properties                       u:object_r:hardware_properties_service:s0
+havocfont                                 u:object_r:havocfont_service:s0
 hdmi_control                              u:object_r:hdmi_control_service:s0
 incident                                  u:object_r:incident_service:s0
 inputflinger                              u:object_r:inputflinger_service:s0
