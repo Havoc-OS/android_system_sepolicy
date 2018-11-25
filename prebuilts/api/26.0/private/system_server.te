@@ -448,6 +448,7 @@ set_prop(system_server, dumpstate_options_prop)
 set_prop(system_server, overlay_prop)
 set_prop(system_server, theme_prop)
 userdebug_or_eng(`set_prop(system_server, wifi_log_prop)')
+set_prop(system_server, shell_prop)
 
 # ctl interface
 set_prop(system_server, ctl_default_prop)
