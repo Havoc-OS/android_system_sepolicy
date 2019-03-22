@@ -146,3 +146,6 @@ odm.                    u:object_r:vendor_default_prop:s0
 persist.odm.            u:object_r:vendor_default_prop:s0
 persist.vendor.         u:object_r:vendor_default_prop:s0
 vendor.                 u:object_r:vendor_default_prop:s0
+
+# Havoc
+persist.system.iconshape  u:object_r:debug_prop:s0
