@@ -98,7 +98,6 @@ ro.bt.bdaddr_path u:object_r:exported_bluetooth_prop:s0 exact string
 ro.camera.notify_nfc u:object_r:exported3_default_prop:s0 exact int
 ro.com.android.dataroaming u:object_r:exported3_default_prop:s0 exact bool
 ro.com.android.prov_mobiledata u:object_r:exported3_default_prop:s0 exact bool
-ro.com.google.clientidbase u:object_r:exported3_default_prop:s0 exact string
 ro.config.alarm_alert u:object_r:exported2_config_prop:s0 exact string
 ro.config.media_vol_steps u:object_r:exported2_config_prop:s0 exact int
 ro.config.notification_sound u:object_r:exported2_config_prop:s0 exact string
@@ -142,6 +141,22 @@ telephony.lteOnCdmaDevice u:object_r:exported3_default_prop:s0 exact int
 tombstoned.max_tombstone_count u:object_r:exported3_default_prop:s0 exact int
 vold.post_fs_data_done u:object_r:exported2_vold_prop:s0 exact int
 wlan.driver.status u:object_r:exported_wifi_prop:s0 exact enum ok unloaded
+
+# Google Apps Vendor
+ro.com.google.clientidbase                       u:object_r:exported3_default_prop:s0 exact string
+ro.atrace.core.services                          u:object_r:exported3_default_prop:s0 exact string
+ro.com.google.ime.bs_theme                       u:object_r:exported3_default_prop:s0 exact bool
+ro.com.google.ime.theme_id                       u:object_r:exported3_default_prop:s0 exact string
+ro.error.receiver.system.apps                    u:object_r:exported3_default_prop:s0 exact string
+ro.opa.eligible_device                           u:object_r:exported3_default_prop:s0 exact bool
+ro.setupwizard.enterprise_mode                   u:object_r:exported3_default_prop:s0 exact string
+ro.setupwizard.esim_cid_ignore                   u:object_r:exported3_default_prop:s0 exact string
+ro.setupwizard.rotation_locked                   u:object_r:exported3_default_prop:s0 exact bool
+ro.storage_manager.show_opt_in                   u:object_r:exported3_default_prop:s0 exact bool
+ro.wallpapers_loc_request_suw                    u:object_r:exported3_default_prop:s0 exact bool
+setupwizard.enable_assist_gesture_training       u:object_r:exported3_default_prop:s0 exact bool
+setupwizard.feature.baseline_setupwizard_enabled u:object_r:exported3_default_prop:s0 exact bool
+setupwizard.theme                                u:object_r:exported3_default_prop:s0 exact string
 
 # vendor-init-readable|vendor-init-actionable
 dev.bootcomplete u:object_r:exported3_system_prop:s0 exact bool
