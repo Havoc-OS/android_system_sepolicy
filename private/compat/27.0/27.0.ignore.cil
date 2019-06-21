@@ -56,6 +56,7 @@
     hal_usb_gadget_hwservice
     hal_vehicle_hwservice
     hal_wifi_hostapd_hwservice
+    havocfont_service
     incident_helper
     incident_helper_exec
     last_boot_reason_prop
