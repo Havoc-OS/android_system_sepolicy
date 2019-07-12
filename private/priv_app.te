@@ -39,6 +39,10 @@ allow priv_app recovery_service:service_manager find;
 allow priv_app stats_service:service_manager find;
 allow priv_app system_api_service:service_manager find;
 
+# Fonts
+allow priv_app theme_data_file:file r_file_perms;
+allow priv_app theme_data_file:dir r_dir_perms;
+
 # Write to /cache.
 allow priv_app { cache_file cache_recovery_file }:dir create_dir_perms;
 allow priv_app { cache_file cache_recovery_file }:file create_file_perms;

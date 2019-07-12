@@ -26,6 +26,10 @@ allow appdomain zygote:process sigchld;
 allow appdomain cgroup:dir { search write };
 allow appdomain cgroup:file rw_file_perms;
 
+# Themes/fonts
+allow appdomain theme_data_file:file r_file_perms;
+allow appdomain theme_data_file:dir r_dir_perms;
+
 # Read /data/dalvik-cache.
 allow appdomain dalvikcache_data_file:dir { search getattr };
 allow appdomain dalvikcache_data_file:file r_file_perms;
