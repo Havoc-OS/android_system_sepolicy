@@ -181,7 +181,7 @@ allow domain vndk_sp_file:file { execute read open getattr map };
 
 # All domains get access to /vendor/etc
 allow domain vendor_configs_file:dir r_dir_perms;
-allow domain vendor_configs_file:file { read open getattr };
+allow domain vendor_configs_file:file { read open getattr map };
 
 full_treble_only(`
     # Allow all domains to be able to follow /system/vendor and/or
@@ -262,7 +262,7 @@ allow domain fs_type:dir getattr;
 # defaults for all processes. Note that granting this whitelist to domain does
 # not grant the ioctl permission on these socket types. That must be granted
 # separately.
-allowxperm domain domain:{ rawip_socket tcp_socket udp_socket }
+allowxperm domain domain:{ icmp_socket rawip_socket tcp_socket udp_socket }
   ioctl { unpriv_sock_ioctls unpriv_tty_ioctls };
 # default whitelist for unix sockets.
 allowxperm domain domain:{ unix_dgram_socket unix_stream_socket }
@@ -1367,30 +1367,37 @@ full_treble_only(`
 # Minimize dac_override and dac_read_search.
 # Instead of granting them it is usually better to add the domain to
 # a Unix group or change the permissions of a file.
-neverallow {
-  domain
-  -dnsmasq
-  -dumpstate
-  -init
-  -installd
-  -install_recovery
-  -lmkd
-  -netd
-  -otapreopt_slot
-  -perfprofd
-  -postinstall_dexopt
-  -recovery
-  -sdcardd
-  -thermalserviced
-  -tee
-  -ueventd
-  -uncrypt
-  -vendor_init
-  -vold
-  -vold_prepare_subdirs
-  -zygote
-} self:capability dac_override;
-neverallow { domain -traced_probes } self:capability dac_read_search;
+define(`dac_override_allowed', `{
+  dnsmasq
+  dumpstate
+  init
+  installd
+  install_recovery
+  lmkd
+  netd
+  otapreopt_slot
+  perfprofd
+  postinstall_dexopt
+  recovery
+  sdcardd
+  tee
+  thermalserviced
+  ueventd
+  uncrypt
+  vendor_init
+  vold
+  vold_prepare_subdirs
+  zygote
+}')
+neverallow ~dac_override_allowed self:global_capability_class_set dac_override;
+# Since the kernel checks dac_read_search before dac_override, domains that
+# have dac_override should also have dac_read_search to eliminate spurious
+# denials.  Some domains have dac_read_search without having dac_override, so
+# this list should be a superset of the one above.
+neverallow ~{
+  dac_override_allowed
+  traced_probes
+} self:global_capability_class_set dac_read_search;
 
 # If an already existing file is opened with O_CREAT, the kernel might generate
 # a false report of a create denial. Silence these denials and make sure that
