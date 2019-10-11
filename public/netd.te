@@ -21,6 +21,7 @@ dontaudit netd self:global_capability_class_set fsetid;
 
 # Allow netd to open /dev/tun, set it up and pass it to clatd
 allow netd tun_device:chr_file rw_file_perms;
+allow netd device:file w_file_perms;
 allowxperm netd tun_device:chr_file ioctl { TUNGETIFF TUNSETIFF };
 allow netd self:tun_socket create;
 

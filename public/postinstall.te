@@ -22,6 +22,7 @@ allow postinstall toolbox_exec:file rx_file_perms;
 # Allow postinstall to execute shell in recovery.
 recovery_only(`
   allow postinstall rootfs:file rx_file_perms;
+  allow postinstall rootfs:dir r_dir_perms;
 ')
 
 #

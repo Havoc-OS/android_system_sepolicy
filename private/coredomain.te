@@ -109,6 +109,9 @@ full_treble_only(`
     coredomain
     -fsck
     -init
+    -installd
+    -netd
+    -storaged
     -ueventd
   } device:{ blk_file file } no_rw_file_perms;
 
